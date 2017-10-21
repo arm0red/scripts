@@ -18,10 +18,10 @@ read DIR
 echo -e "\e[31;1m Enter Output Location:\e[0m"
 read OL
 
+IF=${DIR%}
 echo -e "\e[31;1m ***** BACKING UP $IF *****\e[0m"
 echo ""
 
-IF=${DIR%}
 OF=$OL/backup-${IF##*/}-$(date +%Y%m%d).tar.gz
 tar -czvf $OF $IF
 
