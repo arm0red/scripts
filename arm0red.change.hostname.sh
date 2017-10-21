@@ -8,14 +8,19 @@ clear
 #  \__,_|_|  |_| |_| |_|\___(_)_|  \___|\__,_| 
 
 cat arm0red
+echo -e "\e[31;1m ***** arm0.red Security *****\e[0m"
+echo -e "\e[31;1m ***** Change Hostname Script *****\e[0m"
+echo ""
+
 # Assign existing hostname to $hostn
 hostn=$(cat /etc/hostname)
 
 # Display existing hostname
-echo "Existing hostname is $hostn"
+echo -e "\e[31;1m Existing hostname is: \e[0m"
+echo "$hostn"
 
 # Ask for new hostname $newhost
-echo "Enter new hostname: "
+echo -e "\e[31;1m Enter new hostname: \e[0m"
 read newhost
 
 # Change hostname in /etc/hosts & /etc/hostname
@@ -23,8 +28,18 @@ sudo sed -i "s/$hostn/$newhost/g" /etc/hosts
 sudo sed -i "s/$hostn/$newhost/g" /etc/hostname
 
 # Display new hostname
-echo "Your new hostname is $newhost"
+echo -e "\e[31;1m Your new hostname is: \e[0m"
+echo "$newhost"
 
 # Press a key to reboot
-read -s -n 1 -p "Press any key to reboot"
-sudo reboot
+echo -e "\e[31;1m A REBOOT IS REQUIRED. \e[0m"
+
+read -r -p "Do you want to reboot now? [y/N] " response
+if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+then
+	sudo systemctl reboot
+else
+	echo -e "\e[1;32mDone.\e[0m"
+fi
+#read -s -n 1 -p "Press any key to reboot"
+#sudo reboot
