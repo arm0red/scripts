@@ -23,7 +23,6 @@ echo -e "\e[31;1m *****  BACKING UP\e[34;1m $IF \e[31;1m *****\e[0m"
 echo ""
 
 OF=$OL/backup-${IF##*/}-$(date +%Y%m%d).tar.gz
-#env GZIP=-9 tar --preserve-permissions -czvf $OF $IF
 tar --preserve-permissions -cvf - $IF | gzip -9 - > $OF
 
 echo -e "\e[1;32mDone.\e[0m"
