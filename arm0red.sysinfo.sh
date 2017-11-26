@@ -36,7 +36,7 @@ echo ""
 
 # Logged-in users:
 echo -e "\e[31;1m ***** CURRENTLY LOGGED-IN USERS *****\e[0m"
-who
+who | tr -s ' ' | cut -d' ' -f1
 echo ""
 
 # Top 5 processes as far as memory usage is concerned
@@ -44,9 +44,9 @@ echo -e "\e[31;1m ***** TOP 5 MEMORY-CONSUMING PROCESSES *****\e[0m"
 ps -eo %mem,%cpu,comm --sort=-%mem | head -n 6
 echo ""
 
-# Private IPv4 and IPv6
-echo -e "\e[31;1m ***** Private IPv4 and IPv6 *****\e[0m"
-ip a | grep 'inet' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d/ -f1
+# Private IPv4
+echo -e "\e[31;1m ***** Private IP *****\e[0m"
+ip a | grep 'inet' | grep -v '127.0.0.1' | grep -v 'inet6' | awk '{print $2}' | cut -d/ -f1
 echo ""
 
 # Public IP
