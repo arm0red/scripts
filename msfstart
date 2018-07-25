@@ -14,8 +14,4 @@ echo "Starting postgresql..."
 sudo systemctl start postgresql
 echo "Starting msfdb..."
 sudo msfdb start
-#echo "Starting metasploit..."
 sudo msfconsole
-#echo ""
-#echo -e "\e[1;32mDone.\e[0m"
-
