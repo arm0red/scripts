@@ -10,9 +10,16 @@ clear
 cat arm0red
 echo -e "\e[31;1m***** arm0.red Security *****\e[0m"
 echo -e "\e[31;1m***** Pacman Update Script Running *****\e[0m"
-#sudo pacman -Syu
-pacaur -Syu -a
+
+# This is for regular pacman update
+sudo pacman -Syu
+
+# This is for pacaur AUR update
+#pacaur -Syu -a
+
+# This is for yaourt AUR update
 #yaourt -Syu --aur
+
 echo ""
 echo -e "\e[1;32mDone.\e[0m"
 
