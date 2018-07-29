@@ -11,7 +11,12 @@ cat arm0red
 echo -e "\e[31;1m***** arm0.red Security *****\e[0m"
 echo -e "\e[31;1m***** Kali Post Install Script *****\e[0m"
 
-echo  -e "\e[31;1m ***** \e[34;1m UPDATING PACKAGES \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m ADDING APT HTTPS SUPPORT \e[31;1m *****\e[0m"
+sudo apt install apt-transport-https
+sed -i 's/http\:\/\//https\:\/\//g' /etc/apt/sources.list
+echo ""
+
+echo  -e "\e[31;1m ***** \e[34;1m UPDATING APT PACKAGES \e[31;1m *****\e[0m"
 sudo apt update && sudo apt full-upgrade -y
 echo ""
 
