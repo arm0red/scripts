@@ -41,9 +41,9 @@ sudo mkdir /etc/ssh/default_kali_keys
 sudo mv /etc/ssh/ssh_host_* default_kali_keys/
 sudo dpkg-reconfigure openssh-server
 echo "Old Keys:"
-md5sum /etc/ssh/default_kali_keys/*
+sudo md5sum /etc/ssh/default_kali_keys/*
 echo "New Keys:"
-md5sum /etc/ssh/*
+sudo md5sum /etc/ssh/*
 echo ""
 
 echo -e "\e[31;1m ***** \e[34;1m SETTING UP METASPLOIT DATABASE \e[31;1m *****\e[0m"
