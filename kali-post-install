@@ -73,8 +73,8 @@ echo ""
 #run_keybase
 #echo ""
 
-echo "Private Internet Access VPN is recommended..."
-echo "You can Download it at https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red"
+echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m You can Download it at https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
 #echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
 #cd Downloads
 #tar -xzf pia-*-installer-linux.tar.gz
@@ -82,5 +82,6 @@ echo "You can Download it at https://www.privateinternetaccess.com/pages/pia-2yr
 #cd ..
 #echo ""
 
-echo "Don't forget to REBOOT!"
+echo -e "\e[31;1mDon't forget to \e[34;1m REBOOT! \e[0m"
+echo ""
 echo -e "\e[1;32mDone.\e[0m"
