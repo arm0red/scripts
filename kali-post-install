@@ -1,0 +1,56 @@
+#!/bin/bash
+
+echo "Updating the packages..."
+sudo apt update && sudo apt full-upgrade -y
+
+echo "Installing Veil..."
+sudo apt -y install veil
+sudo /usr/share/veil/config/setup.sh --force --silent
+
+echo "Installing TOR..."
+sudo apt install tor torbrowser-launcher -y
+
+echo "Installing Kali-AnonSurf..."
+sudo apt install git -y
+git clone https://github.com/Und3rf10w/kali-anonsurf.git
+cd kali-anonsurf
+sudo ./installer.sh
+
+echo "Changing default SSH keys..."
+sudo mkdir /etc/ssh/default_kali_keys
+sudo mv /etc/ssh/ssh_host_* default_kali_keys/
+sudo dpkg-reconfigure openssh-server
+echo "Old Keys:"
+md5sum /etc/ssh/default_kali_keys/*
+echo "New Keys:"
+md5sum /etc/ssh/*
+
+echo "Setting up Metasploit Database..."
+sudo systemctl start postgresql
+sudo msfdb init
+
+echo "Installing 64-Bit Keybase..."
+curl -O https://prerelease.keybase.io/keybase_amd64.deb
+# if you see an error about missing `libappindicator1`
+# from the next command, you can ignore it, as the
+# subsequent command corrects it
+sudo dpkg -i keybase_amd64.deb
+sudo apt-get install -f
+run_keybase
+
+#echo "Installing 32-Bit Keybase..."
+#curl -O https://prerelease.keybase.io/keybase_i386.deb
+# if you see an error about missing `libappindicator1`
+# from the next command, you can ignore it, as the
+# subsequent command corrects it
+#sudo dpkg -i keybase_i386.deb
+#sudo apt-get install -f
+#run_keybase
+
+echo "Private Internet Access VPN is recommended..."
+echo "You can Download it at https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red"
+#echo "Installing Private Internet Access..."
+#cd Downloads
+#tar -xzf pia-v81-installer-linux.tar.gz
+#./pia-v81-installer-linux.sh
+#cd ..
