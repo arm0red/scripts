@@ -24,14 +24,14 @@ echo -e "\e[31;1m ***** \e[34;1m INSTALLING TOR \e[31;1m *****\e[0m"
 sudo apt install tor torbrowser-launcher -y
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m Installing Kali-AnonSurf \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m INSTALLING Kali-AnonSurf by Und3rf10w \e[31;1m *****\e[0m"
 sudo apt install git -y
 git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf
 sudo ./installer.sh
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m Changing default SSH keys \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m CHANGING DEFAULT SSH KEYS \e[31;1m *****\e[0m"
 sudo mkdir /etc/ssh/default_kali_keys
 sudo mv /etc/ssh/ssh_host_* default_kali_keys/
 sudo dpkg-reconfigure openssh-server
@@ -41,12 +41,13 @@ echo "New Keys:"
 md5sum /etc/ssh/*
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m Setting up Metasploit Database \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m SETTING UP METASPLOIT DATABASE \e[31;1m *****\e[0m"
 sudo systemctl start postgresql
 sudo msfdb init
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m Installing 64-Bit Keybase \e[31;1m *****\e[0m"
+# 64-Bit Keybase
+echo -e "\e[31;1m ***** \e[34;1m INSTALLING KEYBASE \e[31;1m *****\e[0m"
 curl -O https://prerelease.keybase.io/keybase_amd64.deb
 # if you see an error about missing `libappindicator1`
 # from the next command, you can ignore it, as the
@@ -56,7 +57,8 @@ sudo apt-get install -f
 run_keybase
 echo ""
 
-#echo -e "\e[31;1m ***** \e[34;1m Installing 32-Bit Keybase \e[31;1m *****\e[0m"
+# 32-Bit Keybase
+#echo -e "\e[31;1m ***** \e[34;1m INSTALLING KEYBASE \e[31;1m *****\e[0m"
 #curl -O https://prerelease.keybase.io/keybase_i386.deb
 # if you see an error about missing `libappindicator1`
 # from the next command, you can ignore it, as the
@@ -68,10 +70,10 @@ echo ""
 
 echo "Private Internet Access VPN is recommended..."
 echo "You can Download it at https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red"
-#echo -e "\e[31;1m ***** \e[34;1m Installing Private Internet Access \e[31;1m *****\e[0m"
+#echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
 #cd Downloads
-#tar -xzf pia-v81-installer-linux.tar.gz
-#./pia-v81-installer-linux.sh
+#tar -xzf pia-*-installer-linux.tar.gz
+#./pia-*-installer-linux.sh
 #cd ..
 #echo ""
 
