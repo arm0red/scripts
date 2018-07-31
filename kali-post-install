@@ -7,7 +7,7 @@ clear
 # | (_| | |  | | | | | \ |_/ /| | |  __/ (_| | 
 #  \__,_|_|  |_| |_| |_|\___(_)_|  \___|\__,_| 
 
-cat arm0red
+cat /usr/local/bin/arm0red
 echo -e "\e[31;1m***** arm0.red Security *****\e[0m"
 echo -e "\e[31;1m***** Kali Post Install Script *****\e[0m"
 
