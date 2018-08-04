@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Setting up wlan1 Monitor Mode."
+
+ip link set wlan1 down
+iw dev wlan1 set type monitor
+#iw wlan1 set txpower fixed 3000
+macchanger -r wlan1
+ip link set wlan1 up
+
+echo "Done."
