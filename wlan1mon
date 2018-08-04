@@ -20,4 +20,4 @@ iw dev wlan1 set type monitor
 macchanger -r wlan1
 ip link set wlan1 up
 
-echo "Done."
+echo -e "\e[1;32mDone.\e[0m"
