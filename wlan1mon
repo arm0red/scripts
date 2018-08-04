@@ -9,9 +9,15 @@ clear
 
 cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** \e[34;1m APT Update Script Running \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m Monitor Mode Script \e[31;1m *****\e[0m"
+echo ""
 
-sudo apt update && sudo apt full-upgrade -y
+echo -e "\e[31;1m ***** \e[34;1m Setting up wlan1 Monitor Mode \e[31;1m *****\e[0m"
+
+ip link set wlan1 down
+iw dev wlan1 set type monitor
+#iw wlan1 set txpower fixed 3000
+macchanger -r wlan1
+ip link set wlan1 up
 
 echo -e "\e[1;32mDone.\e[0m"
-
