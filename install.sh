@@ -18,3 +18,9 @@ sudo cp kali-post-install /usr/local/bin/kali-post-install
 
 sudo cp msfstart /usr/local/bin/msfstart
 
+sudo cp wlan1mon /usr/local/bin/wlan1mon
+
+sudo cp sysinfo /usr/local/bin/sysinfo
+
+sudo cp newhn /usr/local/bin/newhn
+
