@@ -9,7 +9,7 @@ clear
 
 cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** \e[34;1m Monitor Mode Script \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m Monitor Mode v1.1 \e[31;1m *****\e[0m"
 echo ""
 
 echo -e "\e[31;1m ***** \e[34;1m Setting up wlan1 Monitor Mode \e[31;1m *****\e[0m"
@@ -20,4 +20,5 @@ iw dev wlan1 set type monitor
 macchanger -r wlan1
 ip link set wlan1 up
 
+echo -e "\e[31;1m ***** wlan1 is now in \e[34;1m Monitor Mode \e[31;1m *****\e[0m"
 echo -e "\e[1;32mDone.\e[0m"

@@ -9,7 +9,7 @@ clear
 
 cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** \e[34;1m System Info Script \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m System Info v2.0 \e[31;1m *****\e[0m"
 echo ""
 
 # This script will return the following set of system information:
