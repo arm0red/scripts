@@ -25,6 +25,10 @@ sudo apt -y install veil
 sudo /usr/share/veil/config/setup.sh --force --silent
 echo ""
 
+echo -e "\e[31;1m ***** \e[34;1m INSTALLING Speedtest-cli \e[31;1m *****\e[0m"
+sudo apt install speedtest-cli -y
+echo ""
+
 echo -e "\e[31;1m ***** \e[34;1m INSTALLING TOR \e[31;1m *****\e[0m"
 sudo apt install tor torbrowser-launcher -y
 echo ""
