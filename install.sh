@@ -16,7 +16,9 @@ echo -e "\e[31;1m ***** \e[34;1m Install Script Running \e[31;1m *****\e[0m"
 echo "Installing Update Script..."
 sudo chmod +x aptup
 sudo cp aptup /usr/local/bin/aptup
+#sudo chmod +x dnfup
 #sudo cp dnfup /usr/local/bin/dnfup
+#sudo chmod +x pacup
 #sudo cp pacup /usr/local/bin/pacup
 
 echo "Installing Backup Script..."
