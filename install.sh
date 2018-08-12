@@ -37,7 +37,7 @@ echo -e "\e[31;1m Installing\e[34;1m msfstart Script\e[31;1m...\e[0m"
 sudo chmod +x msfstart
 sudo cp msfstart /usr/local/bin/msfstart
 
-echo "Installing wlan1mon Script..."
+echo -e "\e[31;1m Installing\e[34;1m wlan1mon Script\e[31;1m...\e[0m"
 sudo chmod +x wlan1mon
 sudo cp wlan1mon /usr/local/bin/wlan1mon
 
