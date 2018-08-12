@@ -21,31 +21,31 @@ sudo cp aptup /usr/local/bin/aptup
 #sudo chmod +x pacup
 #sudo cp pacup /usr/local/bin/pacup
 
-echo "Installing Backup Script..."
+echo -e "\e[31;1m Installing\e[34;1m Backup Script\e[31;1m...\e[0m"
 sudo chmod +x backup
 sudo cp backup /usr/local/bin/backup
 
-echo "Installing Bitcoin Script..."
+echo -e "\e[31;1m Installing\e[34;1m Bitcoin Script\e[31;1m...\e[0m"
 sudo chmod +x bitcoin
 sudo cp bitcoin /usr/local/bin/bitcoin
 
-echo "Installing Kali-Post-Install Script..."
+echo -e "\e[31;1m Installing\e[34;1m Kali-Post-Install Script\e[31;1m...\e[0m"
 sudo chmod +x kali-post-install
 sudo cp kali-post-install /usr/local/bin/kali-post-install
 
-echo "Installing msfstart Script..."
+echo -e "\e[31;1m Installing\e[34;1m msfstart Script\e[31;1m...\e[0m"
 sudo chmod +x msfstart
 sudo cp msfstart /usr/local/bin/msfstart
 
-echo "Installing wlan1mon Script..."
+echo -e "\e[31;1m Installing\e[34;1m wlan1mon Script\e[31;1m...\e[0m"
 sudo chmod +x wlan1mon
 sudo cp wlan1mon /usr/local/bin/wlan1mon
 
-echo "Installing sysinfo Script..."
+echo -e "\e[31;1m Installing\e[34;1m sysinfo Script\e[31;1m...\e[0m"
 sudo chmod +x sysinfo
 sudo cp sysinfo /usr/local/bin/sysinfo
 
-echo "Installing newhn Script..."
+echo -e "\e[31;1m Installing\e[34;1m newhn Script\e[31;1m...\e[0m"
 sudo chmod +x newhn
 sudo cp newhn /usr/local/bin/newhn
 
