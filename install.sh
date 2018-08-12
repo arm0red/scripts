@@ -45,7 +45,7 @@ echo -e "\e[31;1m Installing\e[34;1m sysinfo Script\e[31;1m...\e[0m"
 sudo chmod +x sysinfo
 sudo cp sysinfo /usr/local/bin/sysinfo
 
-echo "Installing newhn Script..."
+echo -e "\e[31;1m Installing\e[34;1m newhn Script\e[31;1m...\e[0m"
 sudo chmod +x newhn
 sudo cp newhn /usr/local/bin/newhn
 
