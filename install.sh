@@ -21,7 +21,7 @@ sudo cp aptup /usr/local/bin/aptup
 #sudo chmod +x pacup
 #sudo cp pacup /usr/local/bin/pacup
 
-echo "Installing Backup Script..."
+echo -e "\e[31;1m Installing\e[34;1m Backup Script\e[31;1m...\e[0m"
 sudo chmod +x backup
 sudo cp backup /usr/local/bin/backup
 
