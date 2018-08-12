@@ -25,7 +25,7 @@ echo -e "\e[31;1m Installing\e[34;1m Backup Script\e[31;1m...\e[0m"
 sudo chmod +x backup
 sudo cp backup /usr/local/bin/backup
 
-echo "Installing Bitcoin Script..."
+echo -e "\e[31;1m Installing\e[34;1m Bitcoin Script\e[31;1m...\e[0m"
 sudo chmod +x bitcoin
 sudo cp bitcoin /usr/local/bin/bitcoin
 
