@@ -13,7 +13,7 @@ cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** \e[34;1m Install Script Running \e[31;1m *****\e[0m"
 
-echo "Installing Update Script..."
+echo -e "\e[31;1m Installing\e[34;1m Update Script\e[31;1m...\e[0m"
 sudo chmod +x aptup
 sudo cp aptup /usr/local/bin/aptup
 #sudo chmod +x dnfup
