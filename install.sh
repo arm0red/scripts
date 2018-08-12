@@ -33,7 +33,7 @@ echo -e "\e[31;1m Installing\e[34;1m Kali-Post-Install Script\e[31;1m...\e[0m"
 sudo chmod +x kali-post-install
 sudo cp kali-post-install /usr/local/bin/kali-post-install
 
-echo "Installing msfstart Script..."
+echo -e "\e[31;1m Installing\e[34;1m msfstart Script\e[31;1m...\e[0m"
 sudo chmod +x msfstart
 sudo cp msfstart /usr/local/bin/msfstart
 
