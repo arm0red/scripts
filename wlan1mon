@@ -14,11 +14,11 @@ echo ""
 
 echo -e "\e[31;1m ***** \e[34;1m Setting up wlan1 Monitor Mode \e[31;1m *****\e[0m"
 
-ip link set wlan1 down
-iw dev wlan1 set type monitor
-#iw wlan1 set txpower fixed 3000
-macchanger -r wlan1
-ip link set wlan1 up
+sudo ip link set wlan1 down
+sudo iw dev wlan1 set type monitor
+#sudo iw wlan1 set txpower fixed 3000
+sudo macchanger -r wlan1
+sudo ip link set wlan1 up
 
 echo -e "\e[31;1m ***** wlan1 is now in \e[34;1m Monitor Mode \e[31;1m *****\e[0m"
 echo -e "\e[1;32mDone.\e[0m"
