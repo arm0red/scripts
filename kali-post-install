@@ -9,7 +9,7 @@ clear
 
 cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** \e[34;1m Kali Post Install v1.2 \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m Kali Post Install v1.3 \e[31;1m *****\e[0m"
 
 echo -e "\e[31;1m ***** \e[34;1m ADDING APT HTTPS SUPPORT \e[31;1m *****\e[0m"
 sudo apt install apt-transport-https
@@ -20,27 +20,27 @@ echo  -e "\e[31;1m ***** \e[34;1m UPDATING APT PACKAGES \e[31;1m *****\e[0m"
 sudo apt update && sudo apt full-upgrade -y
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m INSTALLING VEIL \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** INSTALLING \e[34;1m VEIL \e[31;1m *****\e[0m"
 sudo apt -y install veil
 sudo /usr/share/veil/config/setup.sh --force --silent
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m INSTALLING Speedtest-cli \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** INSTALLING \e[34;1m Speedtest-cli \e[31;1m *****\e[0m"
 sudo apt install speedtest-cli -y
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m INSTALLING TOR \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** INSTALLING \e[34;1m TOR \e[31;1m *****\e[0m"
 sudo apt install tor torbrowser-launcher -y
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m INSTALLING Kali-AnonSurf by Und3rf10w \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** INSTALLING \e[34;1m Kali-AnonSurf \e[31;1m by \e[34;1m Und3rf10w \e[31;1m *****\e[0m"
 sudo apt install git -y
 git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf
 sudo ./installer.sh
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m CHANGING DEFAULT SSH KEYS \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** CHANGING DEFAULT \e[34;1m SSH KEYS \e[31;1m *****\e[0m"
 sudo mkdir /etc/ssh/default_kali_keys
 sudo mv /etc/ssh/ssh_host_* default_kali_keys/
 sudo dpkg-reconfigure openssh-server
@@ -50,13 +50,13 @@ echo "New Keys:"
 sudo md5sum /etc/ssh/*
 echo ""
 
-echo -e "\e[31;1m ***** \e[34;1m SETTING UP METASPLOIT DATABASE \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** SETTING UP \e[34;1m METASPLOIT DATABASE \e[31;1m *****\e[0m"
 sudo systemctl start postgresql
 sudo msfdb init
 echo ""
 
 # 64-Bit Keybase
-echo -e "\e[31;1m ***** \e[34;1m INSTALLING KEYBASE \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
 curl -O https://prerelease.keybase.io/keybase_amd64.deb
 # if you see an error about missing `libappindicator1`
 # from the next command, you can ignore it, as the
@@ -67,7 +67,7 @@ run_keybase
 echo ""
 
 # 32-Bit Keybase
-#echo -e "\e[31;1m ***** \e[34;1m INSTALLING KEYBASE \e[31;1m *****\e[0m"
+#echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
 #curl -O https://prerelease.keybase.io/keybase_i386.deb
 # if you see an error about missing `libappindicator1`
 # from the next command, you can ignore it, as the
@@ -78,7 +78,7 @@ echo ""
 #echo ""
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** \e[34;1m You can Download it at https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** You can Download it at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
 #echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
 #cd Downloads
 #tar -xzf pia-*-installer-linux.tar.gz
