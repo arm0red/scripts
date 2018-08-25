@@ -86,6 +86,13 @@ echo -e "\e[31;1m ***** You can Download it at \e[34;1m https://www.privateinter
 #cd ..
 #echo ""
 
-echo -e "\e[31;1mDon't forget to \e[34;1m REBOOT! \e[0m"
-echo ""
-echo -e "\e[1;32mDone.\e[0m"
+echo -e "\e[31;1m A REBOOT IS REQUIRED. \e[0m"
+
+read -r -p "Do you want to reboot now? [y/N] " response
+if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+then
+	sudo systemctl reboot
+else
+	echo -e "\e[1;32mDone.\e[0m"
+fi
+
