@@ -56,8 +56,8 @@ sudo msfdb init
 echo ""
 
 # 64-Bit Keybase
-read -r -p "Do you want to install 64-Bit Keybase? [y/N] " response
-if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32] " response
+if [[ $response =~ ^([64])+$ ]]
 then
 	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
 	curl -O https://prerelease.keybase.io/keybase_amd64.deb
@@ -68,13 +68,9 @@ then
 	sudo apt-get install -f
 	run_keybase
 	echo ""
-else
-	echo "Skipping..."
-fi
 
 # 32-Bit Keybase
-read -r -p "Do you want to install 32-Bit Keybase? [y/N] " response
-if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+elif [[ $response =~ ^([32])+$ ]]
 then
 	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
 	curl -O https://prerelease.keybase.io/keybase_i386.deb
@@ -86,7 +82,7 @@ then
 	run_keybase
 	echo ""
 else
-	echo "Skipping..."
+	echo "Skipping Keybase installation..."
 fi
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
