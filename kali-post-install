@@ -73,15 +73,21 @@ else
 fi
 
 # 32-Bit Keybase
-#echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
-#curl -O https://prerelease.keybase.io/keybase_i386.deb
-# if you see an error about missing `libappindicator1`
-# from the next command, you can ignore it, as the
-# subsequent command corrects it
-#sudo dpkg -i keybase_i386.deb
-#sudo apt-get install -f
-#run_keybase
-#echo ""
+read -r -p "Do you want to install 32-Bit Keybase? [y/N] " response
+if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+then
+	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
+	curl -O https://prerelease.keybase.io/keybase_i386.deb
+	# if you see an error about missing `libappindicator1`
+	# from the next command, you can ignore it, as the
+	# subsequent command corrects it
+	sudo dpkg -i keybase_i386.deb
+	sudo apt-get install -f
+	run_keybase
+	echo ""
+else
+	echo "Skipping..."
+fi
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** You can Download it at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
