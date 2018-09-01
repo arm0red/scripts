@@ -20,5 +20,5 @@ sudo ip link set wlan1 down
 sudo iw dev wlan1 set type managed
 sudo ip link set wlan1 up
 
-echo -e "\e[31;1m ***** \e34;1m wlan1 \e31;1m is now in \e[34;1m Monitor Mode \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e34;1m wlan1 \e31;1m is now in \e[34;1m Managed Mode \e[31;1m *****\e[0m"
 echo -e "\e[1;32mDone.\e[0m"
