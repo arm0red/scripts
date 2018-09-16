@@ -48,7 +48,7 @@ ifconfig | grep 'inet' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $2}'
 
 # Public IP
 echo -e "\e[31;1m ***** \e[34;1m Public IP \e[31;1m *****\e[0m"
-curl ifconfig.co
+curl https://ipv4.icanhazip.com
 echo ""
 echo -e "\e[1;32mDone.\e[0m"
 
