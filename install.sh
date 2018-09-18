@@ -49,5 +49,9 @@ echo -e "\e[31;1m Installing\e[34;1m newhn Script\e[31;1m...\e[0m"
 sudo chmod +x newhn
 sudo cp newhn /usr/local/bin/newhn
 
+echo -e "\e[31;1m Installing\e[34;1m wlan1managed Script\e[31;1m...\e[0m"
+sudo chmod +x wlan1managed
+sudo cp sysinfo /usr/local/bin/wlan1managed
+
 echo ""
 echo -e "\e[1;32mDone.\e[0m"
