@@ -12,15 +12,15 @@ echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** \e[34;1m wlan1 Managed Mode \e[31;1m *****\e[0m"
 echo ""
 
-echo -e "\e[31;1m ***** Setting up \e[34;1m Managed Mode \e[31;1m on \e34;1m wlan1 \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** Setting up \e[34;1m Managed Mode \e[31;1m on \e[34;1m wlan1 \e[31;1m *****\e[0m"
 
 sudo systemctl start NetworkManager
 sudo systemctl start wpa_supplicant
 sudo ip link set wlan1 down
 sudo iw dev wlan1 set type managed
-echo -e "\e[31;1m ***** Resetting \e[34;1m Mac Address \e[31;1m on \e34;1m wlan1 \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** Resetting \e[34;1m Mac Address \e[31;1m on \e[34;1m wlan1 \e[31;1m *****\e[0m"
 sudo macchanger -p wlan1
 sudo ip link set wlan1 up
 sudo iw dev wlan1 info
-echo -e "\e[31;1m ***** \e34;1m wlan1 \e31;1m is now in \e[34;1m Managed Mode \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m wlan1 \e[31;1m is now in \e[34;1m Managed Mode \e[31;1m *****\e[0m"
 echo -e "\e[1;32mDone.\e[0m"
