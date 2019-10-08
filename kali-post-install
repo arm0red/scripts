@@ -72,12 +72,8 @@ read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32] " respo
 if [[ $response =~ ^([64])+$ ]]
 then
 	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
-	curl -O https://prerelease.keybase.io/keybase_amd64.deb
-	# if you see an error about missing `libappindicator1`
-	# from the next command, you can ignore it, as the
-	# subsequent command corrects it
-	sudo dpkg -i keybase_amd64.deb
-	sudo apt-get install -f
+	curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+	sudo apt install ./keybase_amd64.deb
 	run_keybase
 	echo ""
 
@@ -85,16 +81,12 @@ then
 elif [[ $response =~ ^([32])+$ ]]
 then
 	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
-	curl -O https://prerelease.keybase.io/keybase_i386.deb
-	# if you see an error about missing `libappindicator1`
-	# from the next command, you can ignore it, as the
-	# subsequent command corrects it
-	sudo dpkg -i keybase_i386.deb
-	sudo apt-get install -f
-	run_keybase
+	curl --remote-name https://prerelease.keybase.io/keybase_i386.deb
+	sudo apt install ./keybase_i386.deb
+	run_keybase -g # run without GUI; it is not supported on 32-bit Linux
 	echo ""
 else
-	echo "Skipping Keybase installation..."
+	echo "\e[31;1m Skipping \e[34;1m Keybase \e[31;1m installation...\e[0m"
 fi
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
