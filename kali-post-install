@@ -91,12 +91,16 @@ fi
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** You can Download it at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
-#echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
-#cd Downloads
-#tar -xzf pia-*-installer-linux.tar.gz
-#./pia-*-installer-linux.sh
-#cd ..
-#echo ""
+read -r -p "Do you want to install it now? (Click 'y' after you have downloaded the installer.) [y/N] " response
+if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+then
+	echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
+	cd Downloads
+	./pia-linux-1.5-03584.run
+	cd ..
+else
+	echo -e "\e[1;32mSkipping PIA Installation.\e[0m"
+fi
 
 echo -e "\e[31;1m A REBOOT IS REQUIRED. \e[0m"
 
