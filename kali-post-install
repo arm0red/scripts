@@ -39,7 +39,7 @@ cd ~/Documents/
 git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf
 sudo ./installer.sh
-echo -e "\e[31;1m ***** Converting \e[34;1m Kali-Anonsurf repo \e[31;1m by \e[34;1m to https. \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** Converting \e[34;1m Kali-Anonsurf repo \e[31;1m to https. *****\e[0m"
 echo "deb https://deb.i2p2.de/ unstable main" > /etc/apt/sources.list.d/i2p2.list
 echo ""
 
@@ -90,6 +90,8 @@ then
 else
 	echo "\e[31;1m Skipping \e[34;1m Keybase \e[31;1m installation...\e[0m"
 fi
+echo -e "\e[31;1m ***** Converting \e[34;1m Keybase repo \e[31;1m to https. *****\e[0m"
+echo "deb https://prerelease.keybase.io/deb stable main" > /etc/apt/sources.list.d/keybase.list
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** You can Download it at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
