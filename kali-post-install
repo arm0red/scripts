@@ -39,6 +39,8 @@ cd ~/Documents/
 git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf
 sudo ./installer.sh
+echo -e "\e[31;1m ***** Converting \e[34;1m Kali-Anonsurf repo \e[31;1m by \e[34;1m to https. \e[31;1m *****\e[0m"
+echo "deb https://deb.i2p2.de/ unstable main" > /etc/apt/sources.list.d/i2p2.list
 echo ""
 
 echo -e "\e[31;1m ***** CHANGING DEFAULT \e[34;1m SSH KEYS \e[31;1m *****\e[0m"
