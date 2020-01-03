@@ -9,17 +9,23 @@ clear
 
 cat /usr/local/bin/arm0red
 echo -e "\e[31;1m***** arm0.red Security *****\e[0m"
-echo -e "\e[31;1m***** Pacman Update Script Running *****\e[0m"
+echo -e "\e[31;1m***** Arch Update Script *****\e[0m"
 
-# This is for regular pacman update
-sudo pacman -Syu
-
-# This is for pacaur AUR update
-#pacaur -Syu -a
-
-# This is for yaourt AUR update
-#yaourt -Syu --aur
-
+read -r -p "Do you want to check AUR for updates? [y/N] " response
+if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+then
+	# This is for yay AUR update
+    yay -Syu
+    # This is for pacaur AUR update
+    #pacaur -Syu -a
+    
+    # This is for yaourt AUR update
+    #yaourt -Syu --aur
+else [[ $response =~ ^([N])+$ ]]
+then
+	# This is for regular pacman update
+    sudo pacman -Syu
+fi
 echo ""
 echo -e "\e[1;32mDone.\e[0m"
 
