@@ -14,8 +14,9 @@ echo -e "\e[31;1m***** Arch Update Script *****\e[0m"
 read -r -p "Do you want to check AUR for updates? [y/N] " response
 if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
 then
-	# This is for yay AUR update
+    # This is for yay AUR update
     yay -Syu
+    
     # This is for pacaur AUR update
     #pacaur -Syu -a
     
@@ -23,7 +24,7 @@ then
     #yaourt -Syu --aur
 else [[ $response =~ ^([N])+$ ]]
 then
-	# This is for regular pacman update
+    # This is for regular pacman update
     sudo pacman -Syu
 fi
 echo ""
