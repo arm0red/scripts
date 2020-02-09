@@ -70,9 +70,9 @@ echo -e "\e[31;1m ***** INSTALLING \e[34;1m Microsoft Visual Studio Code \e[31;1
 # armor format to GnuPG format
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 # Move the file into your apt trusted keys directory (requires root)
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 # Add the VS Code Repository
-sudo echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 # Update and install Visual Studio Code 
 sudo apt update && sudo apt install code -y
 
