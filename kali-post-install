@@ -98,7 +98,7 @@ else
 	echo "\e[31;1m Skipping \e[34;1m Keybase \e[31;1m installation...\e[0m"
 fi
 echo -e "\e[31;1m ***** Converting \e[34;1m Keybase repo \e[31;1m to https. *****\e[0m"
-echo "deb https://prerelease.keybase.io/deb stable main" > /etc/apt/sources.list.d/keybase.list
+sudo sh -c 'echo "deb https://prerelease.keybase.io/deb stable main" > /etc/apt/sources.list.d/keybase.list'
 
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** You can Download it at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
@@ -106,9 +106,7 @@ read -r -p "Do you want to install it now? (Click 'y' after you have downloaded 
 if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
 then
 	echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
-	cd Downloads
-	./pia-linux-1.5-03584.run
-	cd ..
+	~/Downloads/pia-linux*.run
 else
 	echo -e "\e[1;32mSkipping PIA Installation.\e[0m"
 fi
