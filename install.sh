@@ -41,7 +41,10 @@ echo -e "\e[31;1m Installing\e[34;1m wlan1mon Script\e[31;1m...\e[0m"
 sudo cp wlan1mon /usr/local/bin/wlan1mon
 
 echo -e "\e[31;1m Installing\e[34;1m wlan1managed Script\e[31;1m...\e[0m"
-sudo cp sysinfo /usr/local/bin/wlan1managed
+sudo cp wlan1managed /usr/local/bin/wlan1managed
+
+echo -e "\e[31;1m Installing\e[34;1m ncbackup Script\e[31;1m...\e[0m"
+sudo cp ncbackup /usr/local/bin/ncbackup
 
 echo ""
 echo -e "\e[1;32mDone.\e[0m"
