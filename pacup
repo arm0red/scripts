@@ -15,13 +15,17 @@ read -r -p "Do you want to check AUR for updates? [y/N] " response
 if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
 then
     # This is for yay AUR update
-    yay -Syu
+    #yay -Syu
     
     # This is for pacaur AUR update
     #pacaur -Syu -a
     
     # This is for yaourt AUR update
     #yaourt -Syu --aur
+    
+    # This is for paru AUR update
+    paru -Syu
+    
 else [[ $response =~ ^([N])+$ ]]
 then
     # This is for regular pacman update

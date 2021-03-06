@@ -35,6 +35,7 @@ echo ""
 
 echo -e "\e[31;1m ***** INSTALLING \e[34;1m Kali-AnonSurf \e[31;1m forked by \e[34;1m trackmastersteve \e[31;1m *****\e[0m"
 sudo apt install git -y
+mkdir ~/Code/
 cd ~/Code/
 git clone https://github.com/trackmastersteve/kali-anonsurf.git
 cd kali-anonsurf
