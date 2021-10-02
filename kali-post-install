@@ -21,6 +21,7 @@ echo  -e "\e[31;1m ***** \e[34;1m UPDATING APT PACKAGES \e[31;1m *****\e[0m"
 sudo apt update && sudo apt full-upgrade -y
 echo ""
 
+# This is just a simple command line speedtest script
 echo -e "\e[31;1m ***** INSTALLING \e[34;1m Speedtest-cli \e[31;1m *****\e[0m"
 sudo apt install speedtest-cli -y
 echo ""
@@ -30,6 +31,7 @@ echo -e "\e[31;1m ***** INSTALLING \e[34;1m TOR \e[31;1m packages*****\e[0m"
 sudo apt install tor torbrowser-launcher tor-geoipdb onionbalance onioncircuits onionshare vanguards -y
 echo ""
 
+# This package is used to force all traffic over the TOR network
 echo -e "\e[31;1m ***** INSTALLING \e[34;1m Kali-AnonSurf \e[31;1m forked by \e[34;1m trackmastersteve \e[31;1m *****\e[0m"
 sudo apt install git -y
 mkdir ~/Code/
