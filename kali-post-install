@@ -41,6 +41,7 @@ cd kali-anonsurf
 sudo ./installer.sh
 echo ""
 
+# Replacing insecure default SSH server keys with new ones
 echo -e "\e[31;1m ***** CHANGING DEFAULT \e[34;1m SSH SERVER KEYS \e[31;1m *****\e[0m"
 sudo mkdir /etc/ssh/default_kali_keys
 sudo mv /etc/ssh/ssh_host_* /etc/ssh/default_kali_keys/
@@ -51,10 +52,12 @@ echo "New Keys:"
 sudo md5sum /etc/ssh/*
 echo ""
 
+# Generating new SSH client keys
 echo -e "\e[31;1m ***** Generating new \e[34;1m SSH client keys \e[31;1m *****\e[0m"
 ssh-keygen -t rsa
 echo ""
 
+# Generating new PGP keys
 echo -e "\e[31;1m ***** Generating new \e[34;1m PGP keys \e[31;1m *****\e[0m"
 gpg --gen-key
 
