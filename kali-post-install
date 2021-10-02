@@ -11,6 +11,7 @@ cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** \e[34;1m Kali Post Install v1.8 \e[31;1m *****\e[0m"
 
+# These changes are needed to make APT reuests encrypted with https
 echo -e "\e[31;1m ***** \e[34;1m ADDING APT HTTPS SUPPORT \e[31;1m *****\e[0m"
 sudo apt install apt-transport-https
 sudo sed -i 's/http\:\/\//https\:\/\//g' /etc/apt/sources.list
@@ -24,6 +25,7 @@ echo -e "\e[31;1m ***** INSTALLING \e[34;1m Speedtest-cli \e[31;1m *****\e[0m"
 sudo apt install speedtest-cli -y
 echo ""
 
+# These packages are needed to connect to the TOR network
 echo -e "\e[31;1m ***** INSTALLING \e[34;1m TOR \e[31;1m packages*****\e[0m"
 sudo apt install tor torbrowser-launcher tor-geoipdb onionbalance onioncircuits onionshare vanguards -y
 echo ""
