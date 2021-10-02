@@ -70,7 +70,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg
 sudo apt update && sudo apt install code -y
 
 # 64-Bit Keybase
-read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32/Skip] " response
+read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32/Skip] (WARNING: Having this on your computer will make it less 'quiet' on the network!" response
 if [[ $response =~ ^([64])+$ ]]
 then
 	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
