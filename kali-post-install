@@ -20,11 +20,6 @@ echo  -e "\e[31;1m ***** \e[34;1m UPDATING APT PACKAGES \e[31;1m *****\e[0m"
 sudo apt update && sudo apt full-upgrade -y
 echo ""
 
-echo -e "\e[31;1m ***** INSTALLING \e[34;1m VEIL \e[31;1m *****\e[0m"
-sudo apt install veil -y
-sudo /usr/share/veil/config/setup.sh --force --silent
-echo ""
-
 echo -e "\e[31;1m ***** INSTALLING \e[34;1m Speedtest-cli \e[31;1m *****\e[0m"
 sudo apt install speedtest-cli -y
 echo ""
