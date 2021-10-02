@@ -66,6 +66,7 @@ sudo systemctl start postgresql
 sudo msfdb init
 echo ""
 
+# Installing Microsoft Visual Studio Code package
 echo -e "\e[31;1m ***** INSTALLING \e[34;1m Microsoft Visual Studio Code \e[31;1m *****\e[0m"
 # Download the Microsoft GPG key, and convert it from OpenPGP ASCII armor format to GnuPG format
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -76,8 +77,9 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg
 # Update and install Visual Studio Code 
 sudo apt update && sudo apt install code -y
 
-# 64-Bit Keybase
+# Giving the option to install the Keybase package
 read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32/Skip] (WARNING: Having this on your computer will make it less 'quiet' on the network!" response
+# 64-Bit Keybase
 if [[ $response =~ ^([64])+$ ]]
 then
 	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
@@ -100,6 +102,7 @@ fi
 echo -e "\e[31;1m ***** Converting \e[34;1m Keybase repo \e[31;1m to https. *****\e[0m"
 sudo sh -c 'echo "deb https://prerelease.keybase.io/deb stable main" > /etc/apt/sources.list.d/keybase.list'
 
+# Giving the option to install the PIA VPN package
 echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** You can signup at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
 read -r -p "Do you want to install it now? [y/N] " response
