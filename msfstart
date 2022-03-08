@@ -13,5 +13,5 @@ echo -e "\e[31;1m***** \e[34;1m Starting Metasploit \e[31;1m *****\e[0m"
 echo "Starting postgresql..."
 sudo systemctl start postgresql
 echo "Starting msfdb..."
-sudo msfdb start
+msfdb start
 sudo msfconsole
