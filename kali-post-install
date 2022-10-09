@@ -124,4 +124,3 @@ then
 else
 	echo -e "\e[1;32mSome changes won't take effect until you reboot!\e[0m"
 fi
-
