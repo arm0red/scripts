@@ -32,14 +32,14 @@ sudo apt install tor torbrowser-launcher tor-geoipdb onionbalance onioncircuits 
 echo ""
 
 # This package is used to force all traffic over the TOR network
-echo -e "\e[31;1m ***** INSTALLING \e[34;1m Kali-AnonSurf \e[31;1m forked by \e[34;1m trackmastersteve \e[31;1m *****\e[0m"
-sudo apt install git -y
-mkdir ~/Code/
-cd ~/Code/
-git clone https://github.com/trackmastersteve/kali-anonsurf.git
-cd kali-anonsurf
-sudo ./installer.sh
-echo ""
+#echo -e "\e[31;1m ***** INSTALLING \e[34;1m Kali-AnonSurf \e[31;1m forked by \e[34;1m trackmastersteve \e[31;1m *****\e[0m"
+#sudo apt install git -y
+#mkdir ~/Code/
+#cd ~/Code/
+#git clone https://github.com/trackmastersteve/kali-anonsurf.git
+#cd kali-anonsurf
+#sudo ./installer.sh
+#echo ""
 
 # Replacing insecure default SSH server keys with new ones
 echo -e "\e[31;1m ***** CHANGING DEFAULT \e[34;1m SSH SERVER KEYS \e[31;1m *****\e[0m"
@@ -67,53 +67,53 @@ sudo msfdb init
 echo ""
 
 # Installing Microsoft Visual Studio Code package
-echo -e "\e[31;1m ***** INSTALLING \e[34;1m Microsoft Visual Studio Code \e[31;1m *****\e[0m"
+#echo -e "\e[31;1m ***** INSTALLING \e[34;1m Microsoft Visual Studio Code \e[31;1m *****\e[0m"
 # Download the Microsoft GPG key, and convert it from OpenPGP ASCII armor format to GnuPG format
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+#curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 # Move the file into your apt trusted keys directory (requires root)
-sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+#sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 # Add the VS Code Repository
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+#sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 # Update and install Visual Studio Code 
-sudo apt update && sudo apt install code -y
+#sudo apt update && sudo apt install code -y
 
 # Giving the option to install the Keybase package
-read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32/Skip] (WARNING: Having this on your computer will make it less 'quiet' on the network!" response
+#read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32/Skip] (WARNING: Having this on your computer will make it less 'quiet' on the network!" response
 # 64-Bit Keybase
-if [[ $response =~ ^([64])+$ ]]
-then
-	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
-	curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
-	sudo apt install ./keybase_amd64.deb
-	run_keybase
-	echo ""
+#if [[ $response =~ ^([64])+$ ]]
+#then
+#	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
+#	curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+#	sudo apt install ./keybase_amd64.deb
+#	run_keybase
+#	echo ""
 
 # 32-Bit Keybase
-elif [[ $response =~ ^([32])+$ ]]
-then
-	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
-	curl --remote-name https://prerelease.keybase.io/keybase_i386.deb
-	sudo apt install ./keybase_i386.deb
-	run_keybase -g # run without GUI; it is not supported on 32-bit Linux
-	echo ""
-else
-	echo "\e[31;1m Skipping \e[34;1m Keybase \e[31;1m installation...\e[0m"
-fi
-echo -e "\e[31;1m ***** Converting \e[34;1m Keybase repo \e[31;1m to https. *****\e[0m"
-sudo sh -c 'echo "deb https://prerelease.keybase.io/deb stable main" > /etc/apt/sources.list.d/keybase.list'
+#elif [[ $response =~ ^([32])+$ ]]
+#then
+#	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
+#	curl --remote-name https://prerelease.keybase.io/keybase_i386.deb
+#	sudo apt install ./keybase_i386.deb
+#	run_keybase -g # run without GUI; it is not supported on 32-bit Linux
+#	echo ""
+#else
+#	echo "\e[31;1m Skipping \e[34;1m Keybase \e[31;1m installation...\e[0m"
+#fi
+#echo -e "\e[31;1m ***** Converting \e[34;1m Keybase repo \e[31;1m to https. *****\e[0m"
+#sudo sh -c 'echo "deb https://prerelease.keybase.io/deb stable main" > /etc/apt/sources.list.d/keybase.list'
 
 # Giving the option to install the PIA VPN package
-echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** You can signup at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
-read -r -p "Do you want to install it now? [y/N] " response
-if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
-then
-	echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
-	curl --remote-name https://installers.privateinternetaccess.com/download/pia-linux-3.0.1-06696.run
-	~/Downloads/pia-linux*.run
-else
-	echo -e "\e[1;32mSkipping PIA Installation.\e[0m"
-fi
+#echo -e "\e[31;1m ***** \e[34;1m Private Internet Access VPN is recommended \e[31;1m *****\e[0m"
+#echo -e "\e[31;1m ***** You can signup at \e[34;1m https://www.privateinternetaccess.com/pages/pia-2yr-deal/arm0red \e[31;1m *****\e[0m"
+#read -r -p "Do you want to install it now? [y/N] " response
+#if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+#then
+#	echo -e "\e[31;1m ***** \e[34;1m INSTALLING PRIVATE INTERNET ACCESS \e[31;1m *****\e[0m"
+#	curl --remote-name https://installers.privateinternetaccess.com/download/pia-linux-3.0.1-06696.run
+#	~/Downloads/pia-linux*.run
+#else
+#	echo -e "\e[1;32mSkipping PIA Installation.\e[0m"
+#fi
 
 echo -e "\e[31;1m A REBOOT IS REQUIRED. \e[0m"
 
