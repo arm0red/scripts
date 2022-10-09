@@ -16,7 +16,7 @@ echo -e "\e[31;1m ***** \e[34;1m Install Script Running \e[31;1m *****\e[0m"
 echo -e "\e[31;1m Installing\e[34;1m Update Scripts\e[31;1m...\e[0m"
 sudo cp aptup /usr/local/bin/aptup
 sudo cp aptupv2 /usr/local/bin/aptupv2
-#sudo cp dnfup /usr/local/bin/dnfup
+#sudo cp fedup /usr/local/bin/fedup
 #sudo cp pacup /usr/local/bin/pacup
 
 echo -e "\e[31;1m Installing\e[34;1m Backup Script\e[31;1m...\e[0m"
