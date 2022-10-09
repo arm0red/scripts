@@ -1,0 +1,42 @@
+#!/bin/bash
+clear
+#                       _____               _  
+#                      |  _  |             | | 
+#   __ _ _ __ _ __ ___ | |/' | _ __ ___  __| | 
+#  / _` | '__| '_ ` _ \|  /| || '__/ _ \/ _` | 
+# | (_| | |  | | | | | \ |_/ /| | |  __/ (_| | 
+#  \__,_|_|  |_| |_| |_|\___(_)_|  \___|\__,_| 
+
+cat /usr/local/bin/arm0red
+echo -e "\e[31;1m ***** arm0.red Security *****\e[0m"
+echo -e "\e[31;1m ***** Change Hostname v1.0 *****\e[0m"
+echo ""
+
+# Assign existing hostname to $hostn
+hostn=$(cat /etc/hostname)
+
+# Display existing hostname
+echo -e "\e[31;1m Existing hostname is: \e[0m"
+echo "$hostn"
+
+# Ask for new hostname $newhost
+echo -e "\e[31;1m Enter new hostname: \e[0m"
+read newhost
+
+# Change hostname using hostnamectl
+sudo hostnamectl set-hostname $newhost
+
+# Display new hostname
+echo -e "\e[31;1m Your new hostname is: \e[0m"
+echo "$newhost"
+
+# Press a key to reboot
+echo -e "\e[31;1m A REBOOT IS REQUIRED. \e[0m"
+
+read -r -p "Do you want to reboot now? [y/N] " response
+if [[ $response =~ ^([Yy][eE][sS]|[yY])+$ ]]
+then
+	sudo systemctl reboot
+else
+	echo -e "\e[1;32mDone.\e[0m"
+fi
