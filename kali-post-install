@@ -28,6 +28,7 @@ echo -e "\e[31;1m ***** INSTALLING \e[34;1m TOR \e[31;1m packages*****\e[0m"
 sudo apt install tor torbrowser-launcher tor-geoipdb onionbalance onioncircuits onionshare vanguards -y
 echo ""
 
+# This package is used to force all traffic over the TOR network
 #echo -e "\e[31;1m ***** INSTALLING \e[34;1m Kali-AnonSurf \e[31;1m forked by \e[34;1m trackmastersteve \e[31;1m *****\e[0m"
 #sudo apt install git -y
 #mkdir ~/Code/
@@ -59,6 +60,7 @@ sudo systemctl start postgresql
 sudo msfdb init
 echo ""
 
+# Installing Microsoft Visual Studio Code package
 #echo -e "\e[31;1m ***** INSTALLING \e[34;1m Microsoft Visual Studio Code \e[31;1m *****\e[0m"
 # Download the Microsoft GPG key, and convert it from OpenPGP ASCII armor format to GnuPG format
 #curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -69,8 +71,9 @@ echo ""
 # Update and install Visual Studio Code 
 #sudo apt update && sudo apt install code -y
 
-# 64-Bit Keybase
+# Giving the option to install the Keybase package
 #read -r -p "Do you want to install '64'-Bit or '32'-Bit Keybase? [64/32/Skip] (WARNING: Having this on your computer will make it less 'quiet' on the network!" response
+# 64-Bit Keybase
 #if [[ $response =~ ^([64])+$ ]]
 #then
 #	echo -e "\e[31;1m ***** INSTALLING \e[34;1m KEYBASE \e[31;1m *****\e[0m"
