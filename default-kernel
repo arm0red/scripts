@@ -11,6 +11,7 @@ cat /usr/local/bin/arm0red
 
 sudo grubby --info=ALL | grep -E "^kernel|^index"
 
-sudo grubby --set-default-index=1
+read -r -p "Which index number to you want to set as default? " response
+sudo grubby --set-default-index=$response
 
 sudo grubby --default-title
