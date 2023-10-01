@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+#                       _____               _  
+#                      |  _  |             | | 
+#   __ _ _ __ _ __ ___ | |/' | _ __ ___  __| | 
+#  / _` | '__| '_ ` _ \|  /| || '__/ _ \/ _` | 
+# | (_| | |  | | | | | \ |_/ /| | |  __/ (_| | 
+#  \__,_|_|  |_| |_| |_|\___(_)_|  \___|\__,_| 
+
+cat /usr/local/bin/arm0red
+
+sudo grubby --info=ALL | grep -E "^kernel|^index"
+
+sudo grubby --set-default-index=1
+
+sudo grubby --default-title
