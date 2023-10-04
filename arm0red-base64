@@ -1,1 +1,5 @@
+#!/bin/bash
+clear
 
+# Creating base64 of the arm0red ascii logo.
+cat arm0red | gzip | base64
