@@ -9,9 +9,18 @@ clear
 
 cat /usr/local/bin/arm0red
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
-echo -e "\e[31;1m ***** \e[34;1m Nextcloud Backup Script \e[31;1m *****\e[0m"
+echo -e "\e[31;1m ***** \e[34;1m Default kernel set script \e[31;1m *****\e[0m"
+
 echo ""
+echo -e "\e[34;1mListing installed kernels\e[31;1m...\e[0m"
+sudo grubby --info=ALL | grep -E "^kernel|^index"
 
-sudo rsync -avx /srv/nextcloud/ nextcloud@192.168.1.146:/volume1/backups/nextcloud
+read -r -p "Which index number to you want to set as default? " response
+sudo grubby --set-default-index=$response
 
+echo ""
+echo -e "\e[34;1mNew Default Kernel\e[31;1m:\e[0m"
+sudo grubby --default-title
+
+echo ""
 echo -e "\e[1;32mDone.\e[0m"
