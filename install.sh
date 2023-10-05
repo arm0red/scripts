@@ -9,7 +9,9 @@ clear
 
 git pull origin master
 sudo cp arm0red /usr/local/bin/arm0red
-cat /usr/local/bin/arm0red
+base64 -d <<<"H4sIAAAAAAAAA22NQQoAIQhF957CXQ0MeKHgdxAPP1+tWUSKEs+nqV4DESdTlbvtOfSDeeo8k7kb
+iyNr7D9gW7opJl8tQINOOoN3jeOkFmBJwuq56PVd5VCnZovHSt/XB/DCEXqgKkJ0PEHj6SWpyAe/
+8We1GwEAAA==" | gunzip
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** \e[34;1m Install Script Running \e[31;1m *****\e[0m"
 
