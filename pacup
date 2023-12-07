@@ -29,7 +29,6 @@ then
     #paru -Syu
     
 else [[ $response =~ ^([N])+$ ]]
-then
     # This is for regular pacman update
     sudo pacman -Syu
 fi
