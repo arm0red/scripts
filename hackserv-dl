@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+#                       _____               _  
+#                      |  _  |             | | 
+#   __ _ _ __ _ __ ___ | |/' | _ __ ___  __| | 
+#  / _` | '__| '_ ` _ \|  /| || '__/ _ \/ _` | 
+# | (_| | |  | | | | | \ |_/ /| | |  __/ (_| | 
+#  \__,_|_|  |_| |_| |_|\___(_)_|  \___|\__,_| 
+
+git pull origin master
+sudo cp arm0red /usr/local/bin/arm0red
+base64 -d <<<"H4sIAAAAAAAAA22NQQoAIQhF957CXQ0MeKHgdxAPP1+tWUSKEs+nqV4DESdTlbvtOfSDeeo8k7kb
+iyNr7D9gW7opJl8tQINOOoN3jeOkFmBJwuq56PVd5VCnZovHSt/XB/DCEXqgKkJ0PEHj6SWpyAe/
+8We1GwEAAA==" | gunzip
+
