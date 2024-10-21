@@ -15,5 +15,7 @@ iyNr7D9gW7opJl8tQINOOoN3jeOkFmBJwuq56PVd5VCnZovHSt/XB/DCEXqgKkJ0PEHj6SWpyAe/
 echo -e "\e[31;1m ***** \e[34;1m arm0.red Security \e[31;1m *****\e[0m"
 echo -e "\e[31;1m ***** \e[34;1m Hackerv Bot Install Script \e[31;1m *****\e[0m"
 
+echo "Installing Hackserv..."
 git pull https://github.com/trackmastersteve/hackserv.git
-
+cd hackserv
+./persistence_install.sh
