@@ -5,7 +5,7 @@ select bfdo in "${bfai[@]}"; do
     case $bfdo in
         "Download Bluefin-Tools")
             echo "Downloading Bluefin-Tools..."
-      	    https://raw.githubusercontent.com/ublue-os/bluefin/f699d82c880eb5719b0bcdc1db9117fb8b42e695/just/bluefin-tools.just
+      	    curl -O https://raw.githubusercontent.com/ublue-os/bluefin/f699d82c880eb5719b0bcdc1db9117fb8b42e695/just/bluefin-tools.just
             ;;
         "Install Ollama")
             echo "Installiing Ollama..."
