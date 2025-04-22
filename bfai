@@ -1,1 +1,24 @@
-
+#!/bin/bash
+PS3='In order to install Ollama AI on Bazzite, run each step in order '
+bfai=("Download Bluefin-Tools" "Install Ollama" "Install Open-Webui" "Quit")
+select bfdo in "${bfai[@]}"; do
+    case $bfdo in
+        "Download Bluefin-Tools")
+            echo "Downloading Bluefin-Tools..."
+      	    https://raw.githubusercontent.com/ublue-os/bluefin/f699d82c880eb5719b0bcdc1db9117fb8b42e695/just/bluefin-tools.just
+            ;;
+        "Install Ollama")
+            echo "Installiing Ollama..."
+            just --justfile bluefin-tools.just ollama
+            ;;
+        "Install Open-Webui")
+            echo "Installing open-webui..."
+            just --justfile bluefin-tools.just ollama-web
+            ;;
+	      "Quit")
+	          echo "User requested exit."
+	          exit
+	          ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
