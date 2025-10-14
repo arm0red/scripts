@@ -14,12 +14,13 @@ while true; do
     echo "1. Start Ollama Service (via just)"
     echo "2. Run Open WebUI Container"
     echo "3. Pull Latest Open WebUI Image"
+    echo "4. Update Open WebUI Container"
     echo "-----------------------------------------"
     echo "q. Quit"
     echo "========================================="
     
     # Prompt the user to enter their choice.
-    read -p "Enter your choice [1-3 or q]: " choice
+    read -p "Enter your choice [1-4 or q]: " choice
     
     # Add a newline for better spacing and readability.
     echo
@@ -48,6 +49,26 @@ while true; do
             echo "-> Podman 'pull' command executed."
             ;;
             
+        4)
+            echo "-> Updating the Open WebUI container..."
+            echo "--> Pulling the latest image..."
+            podman pull ghcr.io/open-webui/open-webui:main
+            
+            echo "--> Stopping the current container..."
+            # The '|| true' part ensures that the script doesn't exit with an error if the container isn't running.
+            podman stop open-webui || true
+            
+            echo "--> Removing the old container..."
+            # The '|| true' part ensures that the script doesn't exit with an error if the container doesn't exist.
+            podman rm open-webui || true
+            
+            echo "--> Starting the new container with the updated image..."
+            podman run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+            
+            echo "-> Open WebUI container update process is complete."
+            echo "-> Use 'podman ps' to check the new container's status."
+            ;;
+
         q|Q)
             echo "Exiting the script. Goodbye!"
             # The 'break' command exits the while loop, terminating the script.
@@ -64,18 +85,3 @@ while true; do
     read -p "Press [Enter] to return to the menu..."
     
 done
-```
-
-I've created a bash script for you named `ollama_menu.sh`.
-
-### How to Use It
-
-1.  **Save the File**: Copy the code from the file block above and save it as `ollama_menu.sh` on your system.
-2.  **Make it Executable**: Open your terminal, navigate to where you saved the file, and run this command:
-    ```bash
-    chmod +x ollama_menu.sh
-    ```
-3.  **Run the Script**: Execute the script with the following command:
-    ```bash
-    ./ollama_menu.sh
-    
